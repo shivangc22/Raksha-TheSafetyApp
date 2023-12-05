@@ -15,7 +15,7 @@ import '../model/contactsm.dart';
 sendMessage(String messageBody) async {
   List<TContact> contactList = await DatabaseHelper().getContactList();
   if (contactList.isEmpty) {
-    Fluttertoast.showToast(msg: "no number exist please add a number");
+    Fluttertoast.showToast(msg: "No number exists, please add a number!");
   } else {
     for (var i = 0; i < contactList.length; i++) {
       Telephony.backgroundInstance
@@ -31,16 +31,16 @@ Future<void> initializeService() async {
   final service = FlutterBackgroundService();
   AndroidNotificationChannel channel = AndroidNotificationChannel(
     "script academy",
-    "foregrounf service",
+    "foreground service",
     //"used for imp notifcation",
     importance: Importance.high,
   );
   final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
-  FlutterLocalNotificationsPlugin();
+      FlutterLocalNotificationsPlugin();
 
   await flutterLocalNotificationsPlugin
       .resolvePlatformSpecificImplementation<
-      AndroidFlutterLocalNotificationsPlugin>()
+          AndroidFlutterLocalNotificationsPlugin>()
       ?.createNotificationChannel(channel);
 
   await service.configure(
@@ -61,7 +61,7 @@ Future<void> initializeService() async {
 void onStart(ServiceInstance service) async {
   DartPluginRegistrant.ensureInitialized();
   final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
-  FlutterLocalNotificationsPlugin();
+      FlutterLocalNotificationsPlugin();
 
   if (service is AndroidServiceInstance) {
     service.on('setAsForeground').listen((event) {
@@ -81,8 +81,8 @@ void onStart(ServiceInstance service) async {
     if (service is AndroidServiceInstance) {
       if (await service.isForegroundService()) {
         await Geolocator.getCurrentPosition(
-            desiredAccuracy: LocationAccuracy.high,
-            forceAndroidLocationManager: true)
+                desiredAccuracy: LocationAccuracy.high,
+                forceAndroidLocationManager: true)
             .then((Position position) {
           _curentPosition = position;
           print("bg location ${position.latitude}");
@@ -120,12 +120,12 @@ void onStart(ServiceInstance service) async {
           "shake feature enable",
           NotificationDetails(
               android: AndroidNotificationDetails(
-                "script academy",
-                "foregrounf service",
-                //"used for imp notifcation",
-                icon: 'ic_bg_service_small',
-                ongoing: true,
-              )),
+            "script academy",
+            "foregrounf service",
+            //"used for imp notifcation",
+            icon: 'ic_bg_service_small',
+            ongoing: true,
+          )),
         );
       }
     }

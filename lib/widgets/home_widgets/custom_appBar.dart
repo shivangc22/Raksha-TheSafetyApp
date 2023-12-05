@@ -6,7 +6,7 @@ class CustomAppBar extends StatelessWidget {
   // const CustomAppBar({super.key});
   final VoidCallback? onTap;
   final int? quoteIndex;
-  CustomAppBar({this.onTap,this.quoteIndex});
+  CustomAppBar({this.onTap, this.quoteIndex});
 
   @override
   Widget build(BuildContext context) {

@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Woman Safety Application',
+      title: 'Women Safety Application',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         textTheme: GoogleFonts.firaSansTextTheme(
@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: AnimatedSplashScreen(
-        duration: 7000,
+        duration: 2000, // Adjust the duration as needed
         splash: Image.asset('assets/splash.jpg'),
         nextScreen: FutureBuilder(
           future: MySharedPrefference.getUserType(),
