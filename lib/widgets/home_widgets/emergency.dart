@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:safetyapp/widgets/home_widgets/emergencies/Fakecall.dart';
 import 'emergencies/AmbulanceEmergency.dart';
 import 'emergencies/ArmyEmergency.dart';
 import 'emergencies/FirebrigadeEmergency.dart';
@@ -16,6 +17,7 @@ class Emergency extends StatelessWidget {
         physics: BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
         children: [
+          Fakecall(),
           PoliceEmergency(),
           AmbulanceEmergency(),
           FirebrigadeEmergency(),
