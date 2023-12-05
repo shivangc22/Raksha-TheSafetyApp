@@ -187,7 +187,7 @@ class _FakecallState extends State<Fakecall>
                   CircleAvatar(
                     radius: 25,
                     backgroundColor: Colors.white.withOpacity(0.5),
-                    child: Image.asset('assets/ambulance.png'),
+                    child: Image.asset('assets/fakecall.png'),
                   ),
                   Expanded(
                     child: Column(
@@ -207,25 +207,6 @@ class _FakecallState extends State<Fakecall>
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: MediaQuery.of(context).size.width * 0.045,
-                          ),
-                        ),
-                        Container(
-                          height: 30,
-                          width: 70,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          child: Center(
-                            child: Text(
-                              "0-0-0-0",
-                              style: TextStyle(
-                                color: Colors.red[300],
-                                fontWeight: FontWeight.bold,
-                                fontSize:
-                                    MediaQuery.of(context).size.width * 0.055,
-                              ),
-                            ),
                           ),
                         ),
                       ],

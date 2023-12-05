@@ -1,33 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
+
 class PoliceEmergency extends StatelessWidget {
-  _callNumber(String number) async{
+  _callNumber(String number) async {
     await FlutterPhoneDirectCaller.callNumber(number);
   }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 10.0,bottom: 5),
+      padding: const EdgeInsets.only(left: 10.0, bottom: 5),
       child: Card(
         elevation: 5,
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20)
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         child: InkWell(
-          onTap: ()=> _callNumber('15'),
+          onTap: () => _callNumber('100'),
           child: Container(
             height: 180,
-            width: MediaQuery.of(context).size.width*0.7,
+            width: MediaQuery.of(context).size.width * 0.7,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
               gradient: LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
-                colors:[
-                    Color(0xFFFD8080),
-                    Color(0xFFFB8580),
-                    Color(0xFFFBD079),
-                  ],
+                colors: [
+                  Color(0xFFFD8080),
+                  Color(0xFFFB8580),
+                  Color(0xFFFBD079),
+                ],
               ),
             ),
             child: Padding(
@@ -38,7 +38,7 @@ class PoliceEmergency extends StatelessWidget {
                   CircleAvatar(
                     radius: 25,
                     backgroundColor: Colors.white.withOpacity(0.5),
-                    child: Image.asset('assets/alert.png'),
+                    backgroundImage: AssetImage('assets/alert.png'),
                   ),
                   Expanded(
                     child: Column(
@@ -46,18 +46,18 @@ class PoliceEmergency extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Active Emergency",
+                          "Police",
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
-                            fontSize: MediaQuery.of(context).size.width*0.06,
+                            fontSize: MediaQuery.of(context).size.width * 0.06,
                           ),
                         ),
                         Text(
-                          "Call 0-1-5 for emergencies",
+                          "",
                           style: TextStyle(
-                              color: Colors.white,
-                              fontSize: MediaQuery.of(context).size.width*0.045,
+                            color: Colors.white,
+                            fontSize: MediaQuery.of(context).size.width * 0.045,
                           ),
                         ),
                         Container(
@@ -69,11 +69,12 @@ class PoliceEmergency extends StatelessWidget {
                           ),
                           child: Center(
                             child: Text(
-                              "0 -1 -5",
+                              "1-0-0",
                               style: TextStyle(
                                 color: Colors.red[300],
                                 fontWeight: FontWeight.bold,
-                                fontSize: MediaQuery.of(context).size.width*0.055,
+                                fontSize:
+                                    MediaQuery.of(context).size.width * 0.055,
                               ),
                             ),
                           ),
