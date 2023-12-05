@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:safetyapp/child/bottom_screens/chat_page.dart';
-import 'package:safetyapp/child/bottom_screens/contacts_page.dart';
 import 'package:safetyapp/child/bottom_screens/profile_page.dart';
 
 import 'bottom_screens/child_home_page.dart';
 import 'bottom_screens/add_contacts.dart';
-import 'bottom_screens/review_page.dart';
 
 class BottomPage extends StatefulWidget {
-  BottomPage({Key? key}) : super(key: key);
+  const BottomPage({Key? key}) : super(key: key);
 
   @override
   State<BottomPage> createState() => _BottomPageState();
@@ -19,11 +16,9 @@ class _BottomPageState extends State<BottomPage> {
   List<Widget> pages = [
     HomeScreen(),
     AddContactsPage(),
-    ChatPage(),
     ProfilePage(),
     //CheckUserStatusBeforeChat(),
     //CheckUserStatusBeforeChatOnProfile(),
-    ReviewPage(),
   ];
   onTapped(int index) {
     setState(() {
@@ -39,7 +34,7 @@ class _BottomPageState extends State<BottomPage> {
         currentIndex: currentIndex,
         type: BottomNavigationBarType.fixed,
         onTap: onTapped,
-        items: [
+        items: const [
           BottomNavigationBarItem(
               label: 'home',
               icon: Icon(
@@ -51,19 +46,9 @@ class _BottomPageState extends State<BottomPage> {
                 Icons.contacts,
               )),
           BottomNavigationBarItem(
-              label: 'chats',
-              icon: Icon(
-                Icons.chat,
-              )),
-          BottomNavigationBarItem(
               label: 'Profile',
               icon: Icon(
                 Icons.person,
-              )),
-          BottomNavigationBarItem(
-              label: 'Reviews',
-              icon: Icon(
-                Icons.reviews,
               ))
         ],
       ),
