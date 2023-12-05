@@ -8,7 +8,7 @@ import '../../db/db_services.dart';
 import '../../model/contactsm.dart';
 import 'contacts_page.dart';
 
-class  AddContactsPage extends StatefulWidget {
+class AddContactsPage extends StatefulWidget {
   const AddContactsPage({super.key});
 
   @override
@@ -23,7 +23,7 @@ class _AddContactsPageState extends State<AddContactsPage> {
     Future<Database> dbFuture = databasehelper.initializeDatabase();
     dbFuture.then((database) {
       Future<List<TContact>> contactListFuture =
-      databasehelper.getContactList();
+          databasehelper.getContactList();
       contactListFuture.then((value) {
         setState(() {
           this.contactList = value;
@@ -32,6 +32,7 @@ class _AddContactsPageState extends State<AddContactsPage> {
       });
     });
   }
+
   void deleteContact(TContact contact) async {
     int result = await databasehelper.deleteContact(contact.id);
     if (result != 0) {
@@ -47,6 +48,7 @@ class _AddContactsPageState extends State<AddContactsPage> {
     });
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     if (contactList == null) {

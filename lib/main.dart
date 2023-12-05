@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: AnimatedSplashScreen(
-        duration: 4000, // Adjust the duration as needed
+        duration: 7000,
         splash: Image.asset('assets/splash.jpg'),
         nextScreen: FutureBuilder(
           future: MySharedPrefference.getUserType(),
