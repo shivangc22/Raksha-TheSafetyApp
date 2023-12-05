@@ -12,11 +12,11 @@ class LiveSafe extends StatelessWidget {
   static Future<void> openMap(String location) async {
     String googleUrl = 'https://www.google.com/maps/search/$location';
     final Uri _url = Uri.parse(googleUrl);
-    try{
+    try {
       await launchUrl(_url);
-    }catch(e){
+    } catch (e) {
       Fluttertoast.showToast(
-          msg: 'something went wrong! call emergency number');
+          msg: 'Something went wrong! Call emergency number');
     }
   }
 
