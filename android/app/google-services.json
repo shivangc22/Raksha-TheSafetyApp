@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "213071786703",
-    "project_id": "women-safety-sos-7496c",
-    "storage_bucket": "women-safety-sos-7496c.appspot.com"
+    "project_number": "60911552625",
+    "project_id": "raksha88-4d05b",
+    "storage_bucket": "raksha88-4d05b.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:213071786703:android:351df1cbbd53bb39c37dba",
+        "mobilesdk_app_id": "1:60911552625:android:71e4b38a95c910704373d0",
         "android_client_info": {
-          "package_name": "com.example.safetyapp"
+          "package_name": "com.example.Raksha"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBcYL3eovYylXaCI_JZuGymRsmOjMa3EMA"
+          "current_key": "AIzaSyAuhmgbCHKZAySr_AlZnONg784py3eo3IU"
         }
       ],
       "services": {

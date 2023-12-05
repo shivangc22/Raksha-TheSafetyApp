@@ -13,15 +13,16 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: FirebaseOptions(
-      apiKey: 'AIzaSyBcYL3eovYylXaCI_JZuGymRsmOjMa3EMA',
-      appId: '1:213071786703:android:351df1cbbd53bb39c37dba',
-      messagingSenderId: '213071786703',
-      projectId: 'women-safety-sos-7496c',
+      apiKey: 'AIzaSyAuhmgbCHKZAySr_AlZnONg784py3eo3IU',
+      appId: '1:60911552625:android:71e4b38a95c910704373d0',
+      messagingSenderId: '60911552625',
+      projectId: 'raksha88-4d05b',
     ),
   );
   await MySharedPrefference.init();
   runApp(const MyApp());
 }
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
       title: 'Woman Safety Application',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        textTheme:GoogleFonts.firaSansTextTheme(
+        textTheme: GoogleFonts.firaSansTextTheme(
           Theme.of(context).textTheme,
         ),
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
@@ -38,19 +39,17 @@ class MyApp extends StatelessWidget {
       ),
       home: AnimatedSplashScreen(
         duration: 4000, // Adjust the duration as needed
-        splash: Image.asset(
-            'assets/splash.jpg'
-        ),
+        splash: Image.asset('assets/splash.jpg'),
         nextScreen: FutureBuilder(
           future: MySharedPrefference.getUserType(),
           builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
-            if(snapshot.data==""){
+            if (snapshot.data == "") {
               return LoginScreen();
             }
-            if(snapshot.data=="child"){
+            if (snapshot.data == "child") {
               return BottomPage();
             }
-            if(snapshot.data=="parent"){
+            if (snapshot.data == "parent") {
               return ParentHomeScreen();
             }
             return progressIndicator(context);
