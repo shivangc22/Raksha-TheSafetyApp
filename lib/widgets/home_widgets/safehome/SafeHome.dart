@@ -89,7 +89,7 @@ class _SafeHomeState extends State<SafeHome> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "SEND YOUR CURRENT LOCATION IMMEDIATELY TO YOU EMERGENCY CONTACTS",
+                  "Send your current location to your trusted contacts",
                   textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 20),
                 ),
@@ -97,13 +97,13 @@ class _SafeHomeState extends State<SafeHome> {
                 if (_curentPosition != null)
                   Text(_curentAddress ?? 'No address available'),
                 PrimaryButton(
-                    title: "GET LOCATION",
+                    title: "Get current location",
                     onPressed: () {
                       _getCurrentLocation();
                     }),
                 SizedBox(height: 10),
                 PrimaryButton(
-                    title: "GET ALERT",
+                    title: "Get alerts",
                     onPressed: () async {
                       List<TContact> contactList =
                           await DatabaseHelper().getContactList();
@@ -166,7 +166,8 @@ class _SafeHomeState extends State<SafeHome> {
                   children: [
                     ListTile(
                       title: Text("Send location"),
-                      subtitle: Text("Share location"),
+                      subtitle:
+                          Text("Share your location in case of an emergency"),
                     ),
                   ],
                 ),
