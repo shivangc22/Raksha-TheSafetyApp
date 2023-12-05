@@ -62,12 +62,13 @@ class _AddContactsPageState extends State<AddContactsPage> {
               PrimaryButton(
                   title: "Add Trusted Contacts",
                   onPressed: () async {
-                    bool result = await Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => ContactPage(),
-                        ));
-                    if (result == true) {
+                    bool? result = await Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ContactPage(),
+                      ),
+                    );
+                    if (result != null && result) {
                       showList();
                     }
                   }),
