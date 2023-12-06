@@ -48,7 +48,6 @@ class _SafeHomeState extends State<SafeHome> {
     ).then((Position position) {
       setState(() {
         _curentPosition = position;
-        print(_curentPosition!.latitude);
         _getAddressFromLatLon();
       });
     }).catchError((e) {
@@ -83,12 +82,19 @@ class _SafeHomeState extends State<SafeHome> {
       builder: (context) {
         return Container(
           height: MediaQuery.of(context).size.height / 1.4,
+          decoration: const BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(30),
+              topRight: Radius.circular(30),
+            ),
+          ),
           child: Padding(
             padding: const EdgeInsets.all(14.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
+                const Text(
                   "Send your current location to your trusted contacts",
                   textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 20),
@@ -128,13 +134,6 @@ class _SafeHomeState extends State<SafeHome> {
                       }
                     }),
               ],
-            ),
-          ),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(30),
-              topRight: Radius.circular(30),
             ),
           ),
         );

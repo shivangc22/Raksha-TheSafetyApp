@@ -5,6 +5,7 @@ import 'package:vibration/vibration.dart';
 
 class Fakecall extends StatefulWidget {
   @override
+  // ignore: library_private_types_in_public_api
   _FakecallState createState() => _FakecallState();
 }
 
@@ -26,7 +27,7 @@ class _FakecallState extends State<Fakecall>
     FlutterRingtonePlayer.playRingtone();
 
     // Simulate call for 10 seconds (adjust duration as needed)
-    await Future.delayed(Duration(seconds: 10));
+    await Future.delayed(const Duration(seconds: 10));
 
     // Stop ringtone
     FlutterRingtonePlayer.stop();
@@ -54,21 +55,21 @@ class _FakecallState extends State<Fakecall>
                   children: [
                     Text(
                       _generateRandomName(),
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 30, // Increased font size for the caller name
                         fontWeight: FontWeight.bold,
                         color: Colors.black,
                       ),
                     ),
-                    SizedBox(height: 10),
-                    Text(
+                    const SizedBox(height: 10),
+                    const Text(
                       "+91823457890",
                       style: TextStyle(
                         fontSize: 20,
                         color: Colors.black,
                       ),
                     ),
-                    SizedBox(height: 30),
+                    const SizedBox(height: 30),
                   ],
                 ),
               ),
@@ -94,7 +95,7 @@ class _FakecallState extends State<Fakecall>
                           child: AnimatedBuilder(
                             animation: _animationController,
                             builder: (context, child) {
-                              return CircleAvatar(
+                              return const CircleAvatar(
                                 backgroundColor: Colors.green,
                                 radius: 35,
                                 child: IconButton(
@@ -110,10 +111,14 @@ class _FakecallState extends State<Fakecall>
                           backgroundColor: Colors.red,
                           radius: 35,
                           child: IconButton(
-                            icon: Icon(Icons.call_end,
+                            icon: const Icon(Icons.call_end,
                                 size: 30), // Increased icon size
                             onPressed: () {
                               Navigator.of(context).pop();
+                              FlutterRingtonePlayer.stop();
+                              setState(() {
+                                isRinging = false;
+                              });
                             },
                           ),
                         ),
@@ -147,7 +152,7 @@ class _FakecallState extends State<Fakecall>
     super.initState();
     _animationController = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 500),
+      duration: const Duration(milliseconds: 500),
     );
     _animationController.repeat(reverse: true);
   }
@@ -169,7 +174,7 @@ class _FakecallState extends State<Fakecall>
             width: MediaQuery.of(context).size.width * 0.7,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
-              gradient: LinearGradient(
+              gradient: const LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
                 colors: [
