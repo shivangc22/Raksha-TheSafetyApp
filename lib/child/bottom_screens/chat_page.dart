@@ -6,7 +6,7 @@ class ChatPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child:Text("Chat page")),
+      body: Center(child: Text("Chat page")),
     );
   }
 }
